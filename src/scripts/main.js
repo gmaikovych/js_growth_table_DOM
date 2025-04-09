@@ -28,7 +28,7 @@ removeColumnButton.addEventListener('click', (e) => {
   const rows = table.rows;
 
   for (let i = 0; i < rows.length; i++) {
-    rows[i].deleteCell(0);
+    rows[i].deleteCell(rows.length - 1);
   }
 
   const numberOfColumns = table.rows[0].cells.length;
@@ -63,7 +63,7 @@ addRowButton.addEventListener('click', (e) => {
 });
 
 removeRowButton.addEventListener('click', (e) => {
-  table.deleteRow(0);
+  table.deleteRow(table.rows.length - 1);
 
   if (table.rows.length === 2) {
     removeRowButton.disabled = true;
